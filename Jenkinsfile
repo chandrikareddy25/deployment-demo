@@ -45,7 +45,7 @@ pipeline {
         stage('Health Check') {
             steps {
                 sleep time: 10, unit: 'SECONDS'
-                bat 'curl.exe --retry 5 --retry-delay 2 -f http://localhost:%APP_PORT%/invalid-health'
+                bat 'curl.exe --retry 5 --retry-delay 2 -f http://localhost:%APP_PORT%/health'
             }
         }
     }
